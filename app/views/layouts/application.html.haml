@@ -6,14 +6,9 @@
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
 	= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
 %body
-	%header.navbar.navbar-fixed-top.navbar-inverse
-		.container
-			=link_to 'Sample App', root_path, class: 'navbar-brand'
-			%nav
-				%ul.nav.navbar-nav.navbar-right
-					%li= link_to 'About', static_pages_about_path
-					%li= link_to 'Contact', static_pages_contact_path
-					%li= link_to 'Help', static_pages_help_path
+	= render 'shared/navbar'
+
 	.container
 		=yield
-	
+
+	= render 'shared/footer'
