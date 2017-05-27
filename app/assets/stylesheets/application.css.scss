@@ -56,11 +56,10 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-}
-
-#logo:hover {
+  &:hover {
   color: #fff;
   text-decoration: none;
+  }
 }
 
 /* footer */
@@ -70,14 +69,12 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
+  a {
+  	color: #555;
+  	&:hover {
+  		color: #222;
+  	}
+  }
 }
 
 footer small {
@@ -87,9 +84,8 @@ footer small {
 footer ul {
   float: right;
   list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
+  li {
+  	float: left;
+  	margin-left: 15px;
+  }
 }
