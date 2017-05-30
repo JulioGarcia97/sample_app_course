@@ -1,0 +1,18 @@
+%h1 Log In
+
+.row
+	.col-md-6.col-md-offset-3
+		=form_for(:session, url: login_path) do |f|
+			
+			.form-group
+				= f.label :email
+				= f.email_field :email, class: 'form-control'
+
+			.form-group
+				=f.label :password, 'Contraseña'
+				= f.password_field :password, class: 'form-control'
+
+			.form-group
+				=f.submit 'Log In', class: 'btn btn-primary btn-block'
+
+			%p= link_to 'Sign Up', signup_path
