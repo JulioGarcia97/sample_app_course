@@ -1,0 +1,13 @@
+%h1 All Users
+
+=will_paginate
+
+%ul.users
+	-@users.each do |user|
+		%li
+			=link_to gravatar_for(user), user, size: 50
+			= user.name
+			-if current_user.admin?
+				=link_to ' | Delete', user, method: :delete, data: {confirm: 'Estas seguro de eliminar?'}
+
+=will_paginate

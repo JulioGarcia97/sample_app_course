@@ -1,1 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+julio:
+  name: Julio Garcia
+  email: julio@shipkraken.com
+  password_digest: password
+  admin: true
+
+marco:
+  name: Marco Lopez
+  email: marco@shipkraken.com
+  password_digest: password
+  
