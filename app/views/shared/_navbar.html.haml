@@ -9,6 +9,7 @@
 				
 				- if !current_user.nil?
 					%li= link_to 'Profile', current_user
+					%li= link_to 'Account Settings', edit_user_path(current_user)
 					%li=link_to 'Cerrar Session', logout_path, method: :delete
 				- else
 					%li=link_to 'Iniciar Sesion', login_path
