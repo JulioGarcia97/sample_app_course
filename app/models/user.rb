@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-	attr_accessor :remember_token
-	before_save {self.email = self.email.downcase}
+	attr_accessor :remember_token, :activation_token
+	before_save :downcase_email
+  before_create :create_activation_digest
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	#/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -27,5 +28,16 @@ class User < ApplicationRecord
   def remember
   	self.remember_token = self.new_token
   	update_attribute(:remember_digest, self.digest(remember_token))
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  def create_activation_digest
+    self.activation_token = self.new_token
+    self.activation_digest = self.digest(activation_token)
   end
 end

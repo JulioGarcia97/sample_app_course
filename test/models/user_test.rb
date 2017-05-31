@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'check user is valid' do
-  	assert @user.valid?
+  	assert_not @user.valid?
   end
 
   test 'name should be present and not too long' do

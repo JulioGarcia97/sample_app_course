@@ -3,9 +3,12 @@ julio:
   email: julio@shipkraken.com
   password_digest: password
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 marco:
   name: Marco Lopez
   email: marco@shipkraken.com
   password_digest: password
-  
+  activated: true
+  activated_at: <%= Time.zone.now %>
